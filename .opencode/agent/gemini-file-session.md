@@ -10,6 +10,8 @@ tools:
   write: false
   edit: false
 ---
+**共通コンテキスト**: `.opencode/CONTEXT.md` を参照してください。
+
 あなたはOpenCode内でGemini 2.5 Flash Liteのセッションを実行するアシスタントです。
 
 対応方針:

@@ -1,0 +1,74 @@
+name: HR JD Knowledge Review
+
+# NOTE: 現時点ではGitHub Actionsは利用しない方針のため、手動実行のみ。
+#       将来的に有効化する場合は on: pull_request に戻してください。
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Ensure opencode is available
+        run: |
+          set -euo pipefail
+          if ! command -v opencode >/dev/null 2>&1; then
+            echo "opencode CLI が見つかりません。CI環境に opencode をインストールしてください。" >&2
+            echo "例: self-hosted runner で opencode をセットアップする / install step を追加する" >&2
+            exit 1
+          fi
+          opencode --version
+
+      - name: Collect changed JD files
+        id: changed
+        run: |
+          set -euo pipefail
+          git fetch origin "${{ github.base_ref }}" --depth=1
+          CHANGED=$(git diff --name-only "origin/${{ github.base_ref }}...HEAD" -- 'docs/hr/career/**' | tr '\n' ' ')
+          echo "changed_files=${CHANGED}" >> "$GITHUB_OUTPUT"
+          echo "Changed JD files: ${CHANGED}"
+
+      - name: Run review agent
+        if: ${{ steps.changed.outputs.changed_files != '' }}
+        run: |
+          set -euo pipefail
+          echo "Reviewing: ${{ steps.changed.outputs.changed_files }}"
+          # NOTE: opencode はリポジトリ内ファイルを参照してレビューします。
+          opencode run \
+            --agent hr-jd-knowledge-reviewer \
+            --format default \
+            "次の募集要項ファイルを、docs/hr/playbook の最新knowledgeに照らしてレビューしてください: ${{ steps.changed.outputs.changed_files }}" \
+            | tee opencode_review.txt
+
+      - name: Comment review to PR
+        if: ${{ steps.changed.outputs.changed_files != '' }}
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const body = fs.readFileSync('opencode_review.txt', 'utf8');
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: "## HR JD Knowledge Review (OpenCode)\n\n" + body
+            });
+
+      - name: Fail if review failed
+        if: ${{ steps.changed.outputs.changed_files != '' }}
+        run: |
+          set -euo pipefail
+          if grep -q '^RESULT: FAIL' opencode_review.txt; then
+            echo "JD knowledge review failed" >&2
+            exit 1
+          fi

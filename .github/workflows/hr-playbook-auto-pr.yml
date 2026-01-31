@@ -1,0 +1,91 @@
+name: HR Playbook Auto Update PR
+
+# NOTE: 現時点ではGitHub Actionsは利用しない方針のため、手動実行のみ。
+#       将来的に有効化する場合は on: pull_request_target に戻してください。
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  propose_playbook_update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout base branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.base_ref }}
+          fetch-depth: 0
+
+      - name: Ensure opencode is available
+        run: |
+          set -euo pipefail
+          if ! command -v opencode >/dev/null 2>&1; then
+            echo "opencode CLI が見つかりません。CI環境に opencode をインストールしてください。" >&2
+            exit 1
+          fi
+          opencode --version
+
+      - name: Fetch PR diff safely
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          REPO=${{ github.repository }}
+          curl -L \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            -H "Accept: application/vnd.github.v3.diff" \
+            "https://api.github.com/repos/${REPO}/pulls/${PR_NUMBER}" \
+            -o pr.diff
+          echo "Fetched diff size: $(wc -c < pr.diff) bytes"
+
+      - name: Run playbook updater agent (should only edit docs/hr/playbook)
+        run: |
+          set -euo pipefail
+          opencode run \
+            --agent hr-playbook-updater \
+            --format default \
+            --file pr.diff \
+            "添付したPR差分（pr.diff）から共通化すべきknowledgeがないか確認し、必要なら docs/hr/playbook/** のみを更新してください。docs/hr/career/** は絶対に変更しないでください。" \
+            | tee opencode_playbook_update.txt
+
+      - name: Detect playbook changes
+        id: diff
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- docs/hr/playbook; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No playbook changes detected"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "Playbook changes detected"
+            git diff -- docs/hr/playbook | head -n 200
+          fi
+
+      - name: Create PR for playbook updates
+        if: ${{ steps.diff.outputs.changed == 'true' }}
+        uses: peter-evans/create-pull-request@v6
+        with:
+          title: "[HR Playbook] Sync knowledge from JD PR #${{ github.event.pull_request.number }}"
+          body: |
+            This PR was generated automatically by CI using OpenCode.
+
+            Source JD PR: #${{ github.event.pull_request.number }}
+
+            ---
+            ## OpenCode output
+            ```
+            (See workflow artifact/log for full output)
+            ```
+          commit-message: "hr(playbook): sync knowledge from JD updates"
+          branch: "claude/hr-playbook_${{ github.event.pull_request.number }}_${{ github.run_id }}"
+          add-paths: |
+            docs/hr/playbook/**
+          labels: |
+            auto-generated
+            hr-playbook
+          draft: true

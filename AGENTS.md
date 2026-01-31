@@ -213,6 +213,30 @@ If these files are added later, their instructions **must be followed** and shou
 
 ---
 
+## HR / Recruitment Documents
+
+このリポジトリには採用関連のドキュメントが含まれています。
+
+### 募集要項（Job Descriptions）
+
+- **保存場所**: `docs/hr/career/`
+- **命名規則**: `YYYY-MM-<ポジション名>.md`
+- **言語**: 日本語・英語（バイリンガル形式）
+
+募集要項を作成・編集する際は、このディレクトリ内の既存ファイルを参考にしてください。
+
+### 評価レビュー（Candidate Reviews）
+
+- **保存場所**: `docs/hr/reviews/`
+- **命名規則**: `YYYY-MM-DD_<候補者名>.md`
+
+### 関連スキル
+
+- `.opencode/skills/job-posting/`: 募集要項作成スキル
+- `.opencode/skills/gemini-drive/`: レジュメ評価スキル
+
+---
+
 ## When in Doubt
 
 - Inspect existing code first
