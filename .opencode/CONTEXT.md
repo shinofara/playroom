@@ -54,6 +54,17 @@ docs/hr/career/
 | resume-batch-evaluator | 複数レジュメの一括評価 |
 | resume-nogo-evaluator | 不採用判定の評価 |
 | gemini-file-session | Geminiファイルセッション |
+| obsidian-daily-note-refiner | ObsidianのDailyメモをDaily Noteに整理 |
+
+---
+
+## Obsidian（個人ノート）
+
+| 項目 | 値 |
+|------|-----|
+| Vault ルート | `Obsidian/` |
+| Dailyメモの保存場所（最新） | `Obsidian/daily/YYYY/MM/DD.md` |
+| Daily Note（整理版）の保存場所（推奨） | `Obsidian/daily-note/YYYY/MM/DD.md` |
 
 ---
 
@@ -64,3 +75,6 @@ docs/hr/career/
 - **スキル定義**: `.opencode/skills/`
 - **エージェント定義**: `.opencode/agent/`
 - **プロンプト**: `.opencode/skills/gemini-drive/prompts/`
+- **Obsidian Vault**: `Obsidian/`
+- **Obsidian Dailyメモ（最新）**: `Obsidian/daily/YYYY/MM/DD.md`
+- **Obsidian Daily Note（整理版・推奨）**: `Obsidian/daily-note/YYYY/MM/DD.md`
