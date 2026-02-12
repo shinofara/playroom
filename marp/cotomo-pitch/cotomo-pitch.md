@@ -161,6 +161,19 @@ h2 {
   margin-top: 0.5rem;
 }
 
+.company-logo-corner {
+  position: absolute;
+  bottom: 28px;
+  left: 40px;
+  z-index: 2;
+  opacity: 0.7;
+}
+
+.company-logo-corner img {
+  height: 28px;
+  width: auto;
+}
+
 /* ===== 自己紹介スライド ===== */
 .profile {
   display: flex;
@@ -222,10 +235,13 @@ h2 {
 _backgroundColor: #F3FBF8
 -->
 
-<div class="center-content">
+![bg cover](./images/bg-characters.png)
 
-<div class="bubble bubble-green" style="width:300px;height:300px;top:-80px;right:-60px;"></div>
-<div class="bubble bubble-yellow" style="width:200px;height:200px;bottom:-40px;left:-40px;"></div>
+<div class="company-logo-corner">
+  <img src="./images/starley-logo.svg" alt="Starley">
+</div>
+
+<div class="center-content">
 
 <img src="./images/cotomo-logo.png" class="title-logo">
 

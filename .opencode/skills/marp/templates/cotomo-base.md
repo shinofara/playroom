@@ -612,25 +612,167 @@ strong {
   border-radius: var(--co-radius-md, 12px);
   padding: var(--co-spacing-md, 1.5rem);
 }
+
+/* ======================================================
+   共通スライド: タイトル
+   ====================================================== */
+.title-logo {
+  height: 80px;
+  margin-bottom: 1rem;
+}
+
+.title-sub {
+  font-size: var(--co-font-body);
+  font-weight: 400;
+  color: var(--co-text-secondary);
+  margin-top: var(--co-space-sm);
+}
+
+.company-logo-corner {
+  position: absolute;
+  bottom: 28px;
+  left: 40px;
+  z-index: 2;
+  opacity: 0.7;
+}
+
+.company-logo-corner img {
+  height: 28px;
+  width: auto;
+}
+
+/* ======================================================
+   共通スライド: プロフィール
+   ====================================================== */
+.profile {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5rem;
+  width: 100%;
+  max-width: 900px;
+  position: relative;
+  z-index: 1;
+}
+
+.profile-main {
+  flex: 1;
+}
+
+.profile-name {
+  font-size: 40px;
+  font-weight: 900;
+  color: var(--co-text-primary);
+  margin: 0 0 0.3rem;
+  line-height: 1.3;
+}
+
+.profile-title {
+  font-size: var(--co-font-body);
+  font-weight: 700;
+  color: var(--co-brand);
+  margin: 0 0 1.2rem;
+}
+
+.profile-bio {
+  font-size: var(--co-font-caption);
+  color: var(--co-text-secondary);
+  line-height: 1.8;
+  margin: 0;
+}
+
+.profile-career {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.profile-career .career-tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: var(--co-radius-sm);
+  padding: 0.3rem 0.8rem;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--co-text-primary);
+  box-shadow: var(--co-shadow-sm);
+}
+
+/* ======================================================
+   共通スライド: 会社紹介
+   ====================================================== */
+.company-logo {
+  height: 64px;
+  margin-bottom: 1.5rem;
+}
 </style>
 
 <!-- ======================================================
      スライド構成テンプレート
-     必要なスライドのコメントを外して使用してください
+     title / profile / company は共通スライドです。
+     内容を書き換えて使用してください。
      ====================================================== -->
 
+<!-- ── S1: タイトル ── -->
 <!-- レイアウト: title-logo -->
+
+![bg cover](./images/bg-characters.png)
+
+<div class="company-logo-corner">
+  <img src="./images/starley-logo.svg" alt="Starley">
+</div>
 
 <div class="layout-center">
 
-![w:200](./images/logo.png)
+<img src="./images/cotomo-logo.png" class="title-logo">
 
 # プレゼンテーションタイトル
 
-社名 ｜ 肩書 登壇者名
+<div class="title-sub">社名 ｜ 肩書 登壇者名</div>
 
 </div>
 
 ---
 
-<!-- 以降のスライドをここに追加 -->
+<!-- ── S2: プロフィール ── -->
+<!-- レイアウト: profile -->
+
+<div class="bubble bubble-green bubble-md" style="top:-50px;right:-40px;opacity:0.35;"></div>
+<div class="bubble bubble-pink bubble-sm" style="bottom:-30px;left:-30px;opacity:0.35;"></div>
+
+<div class="profile">
+<div class="profile-main">
+
+<div class="profile-name">氏名</div>
+<div class="profile-title">社名 肩書</div>
+
+<p class="profile-bio">経歴やプロフィールの説明文。knowledge/starley.md を参照して記述。</p>
+
+<div class="profile-career">
+  <span class="career-tag">経歴1</span>
+  <span class="career-tag">経歴2</span>
+  <span class="career-tag co-accent">現職</span>
+</div>
+
+</div>
+</div>
+
+---
+
+<!-- ── S3: 会社紹介 ── -->
+<!-- レイアウト: title-center-sub -->
+
+<div class="bubble bubble-yellow bubble-md" style="top:-60px;left:-50px;opacity:0.35;"></div>
+<div class="bubble bubble-green bubble-sm" style="bottom:-30px;right:-40px;opacity:0.35;"></div>
+
+<div class="layout-center">
+
+<img src="./images/starley-logo.svg" class="company-logo">
+
+## 創業年月 ｜ 事業内容
+
+</div>
+
+---
+
+<!-- ── S4〜: 本編スライドをここに追加 ── -->
