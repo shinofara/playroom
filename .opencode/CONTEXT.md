@@ -41,6 +41,7 @@ docs/hr/career/
 |----------|------|------|
 | gemini-drive | Google DriveファイルをGeminiで処理 | `.opencode/skills/gemini-drive/` |
 | job-posting | 募集要項の作成 | `.opencode/skills/job-posting/` |
+| marp | Marpでスライド作成・プレビュー・エクスポート | `.opencode/skills/marp/` |
 
 ---
 
