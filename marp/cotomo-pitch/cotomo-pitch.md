@@ -228,6 +228,273 @@ h2 {
   color: #484848;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
 }
+
+/* ===== Productスライド（PPTX再現） ===== */
+.product-split {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  padding: 2rem 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.product-left {
+  flex: 0 0 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 1rem;
+}
+
+.product-left .product-catchphrase {
+  font-size: 38px;
+  font-weight: 900;
+  color: #484848;
+  line-height: 1.5;
+  margin: 0 0 1.5rem;
+}
+
+.product-left .product-logo {
+  height: 64px;
+  margin-bottom: 0.8rem;
+}
+
+.product-left .product-subtitle {
+  font-size: 24px;
+  font-weight: 400;
+  color: #6b6b6b;
+  margin: 0;
+}
+
+.product-right {
+  flex: 0 0 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-right .product-mockup {
+  max-height: 480px;
+  width: auto;
+  filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.15));
+}
+
+/* ===== 機能紹介スライド（PPTX slide2再現） ===== */
+.feature-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  height: 100%;
+  width: 100%;
+  padding: 1.5rem 2.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.feature-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.feature-col-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1B1B1B;
+  text-align: center;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.feature-col-screen {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.feature-col-screen img.screen-img {
+  max-height: 340px;
+  width: auto;
+  border-radius: 20px;
+  filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.1));
+  position: relative;
+  z-index: 2;
+}
+
+.feature-col-screen .glow {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.feature-tag {
+  position: absolute;
+  z-index: 3;
+  text-align: center;
+}
+
+.feature-tag-sm {
+  font-size: 11px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.feature-tag-lg {
+  font-size: 20px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+/* ===== ユーザー数スライド（PPTX slide3再現） ===== */
+.stat-users {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.stat-users .stat-huge {
+  font-size: 120px;
+  font-weight: 900;
+  font-style: italic;
+  color: #484848;
+  line-height: 1;
+  margin: 0;
+}
+
+.stat-users .stat-sub {
+  font-size: 38px;
+  font-weight: 700;
+  color: #484848;
+  margin-top: 0.3rem;
+}
+
+/* ===== 累計おしゃべり時間スライド（PPTX slide4再現） ===== */
+.stat-chattime {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.stat-chattime .stat-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #575757;
+  margin-bottom: 0.5rem;
+}
+
+.stat-chattime .stat-number-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.2rem;
+}
+
+.stat-chattime .stat-num {
+  font-size: 110px;
+  font-weight: 900;
+  font-style: italic;
+  color: #575757;
+  line-height: 1;
+}
+
+.stat-chattime .stat-unit-lg {
+  font-size: 64px;
+  font-weight: 700;
+  color: #575757;
+}
+
+.stat-chattime .stat-unit-sm {
+  font-size: 44px;
+  font-weight: 700;
+  color: #575757;
+}
+
+.stat-chattime .stat-card {
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 1rem 2.5rem;
+  margin-top: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  font-size: 18px;
+  color: #575757;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.stat-chattime .stat-card .pink {
+  color: #DD82DA;
+  font-weight: 700;
+}
+
+.char-illust {
+  position: absolute;
+  z-index: 0;
+}
+
+.char-illust img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ===== CTAスライド（PPTX slide5再現） ===== */
+.cta-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  gap: 0.5rem;
+}
+
+.cta-layout .cta-heading {
+  font-size: 36px;
+  font-weight: 900;
+  color: #575757;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.cta-layout .cta-brand {
+  font-size: 20px;
+  font-weight: 400;
+  color: #545454;
+  margin-top: 1rem;
+}
+
+.cta-layout .cta-divider {
+  width: 60px;
+  height: 1px;
+  background: #BBBBBB;
+  margin: 0.8rem auto;
+}
+
+.cta-layout .cta-url {
+  font-size: 18px;
+  color: #6b6b6b;
+}
 </style>
 
 <!-- レイアウト: title-logo -->
@@ -304,6 +571,153 @@ _backgroundColor: #F3FBF8
 
 ---
 
+<!-- レイアウト: product-split（PPTX再現） -->
+<!--
+_backgroundColor: #F3FBF8
+-->
+
+![bg cover](./images/bg-characters.png)
+
+<div class="bubble bubble-green" style="width:280px;height:280px;top:-70px;left:-50px;"></div>
+<div class="bubble bubble-yellow" style="width:200px;height:200px;bottom:-40px;left:30%;"></div>
+<div class="bubble bubble-pink" style="width:180px;height:180px;top:60px;right:-30px;"></div>
+
+<div class="product-split">
+  <div class="product-left">
+    <p class="product-catchphrase">だれと、<br>おしゃべりする？</p>
+    <img src="./images/cotomo-logo.png" class="product-logo">
+    <p class="product-subtitle">おしゃべりAI コトモ</p>
+  </div>
+  <div class="product-right">
+    <img src="./images/app-mockup.png" class="product-mockup">
+  </div>
+</div>
+
+---
+
+<!-- S5: 機能紹介（PPTX slide2再現） -->
+<!--
+_backgroundColor: #F3FBF8
+-->
+
+<div class="feature-2col">
+  <div class="feature-col">
+    <p class="feature-col-title">声、アイコン、性格をカスタマイズして<br><strong>AIキャラを作成</strong></p>
+    <div class="feature-col-screen">
+      <img src="./images/glow-orange.png" class="glow" style="top:-20px;left:-10px;">
+      <img src="./images/glow-blue.png" class="glow" style="bottom:-20px;right:20px;">
+      <img src="./images/feature-settings.png" class="screen-img">
+      <div class="feature-tag" style="bottom:180px;left:10px;">
+        <div class="feature-tag-sm">ハイクオリティな</div>
+        <div class="feature-tag-lg">声</div>
+      </div>
+      <div class="feature-tag" style="bottom:80px;right:10px;">
+        <div class="feature-tag-sm">作り込める</div>
+        <div class="feature-tag-lg">性格</div>
+      </div>
+      <div class="feature-tag" style="top:30px;right:10px;">
+        <div class="feature-tag-sm">自由に設定</div>
+        <div class="feature-tag-lg">アイコン</div>
+      </div>
+    </div>
+  </div>
+  <div class="feature-col">
+    <p class="feature-col-title">他のユーザーが作成したキャラと出会う<br><strong>プラットフォーム</strong></p>
+    <div class="feature-col-screen">
+      <img src="./images/glow-pink.png" class="glow" style="top:-10px;right:-20px;">
+      <img src="./images/glow-green.png" class="glow" style="bottom:20px;left:-10px;">
+      <img src="./images/feature-characters.png" class="screen-img">
+      <div class="feature-tag" style="bottom:60px;right:20px;">
+        <div class="feature-tag-sm">キャラを</div>
+        <div class="feature-tag-lg">公開</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+---
+
+<!-- S6: ユーザー数（PPTX slide3再現） -->
+<!--
+_backgroundColor: #FFFFFF
+-->
+
+<div class="stat-users">
+  <div class="stat-huge">200<span style="font-size:64px;font-style:normal;">万</span></div>
+  <div class="stat-sub">ユーザー突破！</div>
+</div>
+
+---
+
+<!-- S7: 累計おしゃべり時間（PPTX slide4再現） -->
+<!--
+_backgroundColor: #FFFFFF
+-->
+
+<div class="char-illust" style="width:180px;height:180px;top:40px;left:40px;">
+  <img src="./images/char-boy.png">
+</div>
+<div class="char-illust" style="width:160px;height:160px;bottom:30px;left:120px;">
+  <img src="./images/char-girl-purple.png">
+</div>
+<div class="char-illust" style="width:170px;height:170px;bottom:40px;right:60px;">
+  <img src="./images/char-girl-green.png">
+</div>
+
+<div class="bubble bubble-yellow" style="width:260px;height:260px;bottom:-40px;left:30%;opacity:0.40;"></div>
+
+<div class="stat-chattime">
+  <div class="stat-title">全ユーザー累計おしゃべり時間</div>
+  <div class="stat-number-row">
+    <span class="stat-num">250</span>
+    <span class="stat-unit-lg">万</span>
+    <span class="stat-unit-sm">時間</span>
+  </div>
+  <div class="stat-card">
+    リリースから<span class="pink">1.5年</span>で、約<span class="pink">285年分</span>のおしゃべり時間！
+  </div>
+</div>
+
+---
+
+<!-- S8: CTA（PPTX slide5再現） -->
+<!--
+_backgroundColor: #FFFFFF
+-->
+
+<img src="./images/blob-red.png" style="position:absolute;width:300px;top:-60px;right:-60px;opacity:0.8;z-index:0;">
+<img src="./images/blob-pink.png" style="position:absolute;width:120px;bottom:80px;left:60px;opacity:0.7;z-index:0;">
+
+<div class="cta-layout">
+  <img src="./images/cotomo-logo.png" style="height:56px;margin-bottom:0.5rem;">
+  <p class="cta-heading">今すぐ<br>おしゃべり！</p>
+  <div class="cta-divider"></div>
+  <p class="cta-brand">おしゃべりAI コトモ</p>
+  <div class="qr-section" style="margin-top:0.8rem;">
+    <img src="./images/qr-code.png" style="height:100px;">
+    <div>
+      <p class="cta-url">https://cotomo.ai/</p>
+    </div>
+  </div>
+</div>
+
+---
+
+<!-- レイアウト: title-center -->
+<!--
+_backgroundColor: #F3FBF8
+-->
+
+![bg cover](./images/bg-characters.png)
+
+<div class="center-content">
+
+# Cotomo 1分ピッチ
+
+</div>
+
+---
+
 <!--
 _backgroundColor: #F3FBF8
 -->
@@ -374,7 +788,7 @@ _backgroundColor: #F3FBF8
 <div class="bubble bubble-green" style="width:350px;height:350px;top:-100px;left:-80px;"></div>
 <div class="bubble bubble-yellow" style="width:200px;height:200px;bottom:-40px;right:-40px;"></div>
 
-<div class="huge-number">1,000,000+ DL</div>
+<div class="huge-number">200万+ DL</div>
 
 ## 日本では、今が一番大事なタイミングだ。
 
