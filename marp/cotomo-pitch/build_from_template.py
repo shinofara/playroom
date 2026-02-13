@@ -220,6 +220,344 @@ def edit_s8_texts(
     slide_path.write_text(content, encoding="utf-8")
 
 
+def build_title_slide(slide_name: str):
+    """S1 (product-hero) の複製をカスタムタイトルスライドに書き換える
+
+    背景画像 (bg-characters) と装飾バブルを保持しつつ、
+    フォンモックアップを除去し、中央にタイトル・ロゴ・スピーカー情報を配置する。
+    slide1.xml の rels: rId1=bg-characters, rId9=Cotomo logo icon
+    """
+    slide_path = WORK_DIR / "ppt" / "slides" / slide_name
+    # スライドサイズ: 9144000 × 5143500 EMU
+    xml = '''<?xml version="1.0" encoding="utf-8"?>
+<p:sld xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main">
+  <p:cSld name="Title">
+    <p:bg>
+      <p:bgPr>
+        <a:solidFill>
+          <a:srgbClr val="FFFFFF"/>
+        </a:solidFill>
+      </p:bgPr>
+    </p:bg>
+    <p:spTree>
+      <p:nvGrpSpPr>
+        <p:cNvPr id="1" name=""/>
+        <p:cNvGrpSpPr/>
+        <p:nvPr/>
+      </p:nvGrpSpPr>
+      <p:grpSpPr>
+        <a:xfrm>
+          <a:off x="0" y="0"/>
+          <a:ext cx="0" cy="0"/>
+          <a:chOff x="0" y="0"/>
+          <a:chExt cx="0" cy="0"/>
+        </a:xfrm>
+      </p:grpSpPr>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="2" name="Shape 0"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="-72161" y="0"/>
+            <a:ext cx="9286875" cy="5214938"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+          <a:solidFill><a:srgbClr val="EFF6F2"/></a:solidFill>
+          <a:ln/>
+        </p:spPr>
+      </p:sp>
+      <p:pic>
+        <p:nvPicPr>
+          <p:cNvPr id="3" name="Image 0" descr="bg-characters"/>
+          <p:cNvPicPr><a:picLocks noChangeAspect="1"/></p:cNvPicPr>
+          <p:nvPr/>
+        </p:nvPicPr>
+        <p:blipFill>
+          <a:blip r:embed="rId1"/>
+          <a:srcRect l="0" r="8" t="0" b="16279"/>
+          <a:stretch/>
+        </p:blipFill>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="-72885" y="-376131"/>
+            <a:ext cx="9277499" cy="5214938"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+        </p:spPr>
+      </p:pic>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="4" name="Bubble Yellow"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm rot="2321545">
+            <a:off x="-663091" y="3942119"/>
+            <a:ext cx="2392446" cy="2268699"/>
+          </a:xfrm>
+          <a:prstGeom prst="ellipse"><a:avLst/></a:prstGeom>
+          <a:solidFill><a:srgbClr val="D1C45C"><a:alpha val="40000"/></a:srgbClr></a:solidFill>
+          <a:ln/>
+        </p:spPr>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="5" name="Bubble Green"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm rot="2321545">
+            <a:off x="-927779" y="261282"/>
+            <a:ext cx="2326682" cy="2206336"/>
+          </a:xfrm>
+          <a:prstGeom prst="ellipse"><a:avLst/></a:prstGeom>
+          <a:solidFill><a:srgbClr val="6CC7A5"><a:alpha val="40000"/></a:srgbClr></a:solidFill>
+          <a:ln/>
+        </p:spPr>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="6" name="Bubble Pink"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm rot="2321545">
+            <a:off x="7100721" y="-675699"/>
+            <a:ext cx="3086356" cy="2926717"/>
+          </a:xfrm>
+          <a:prstGeom prst="ellipse"><a:avLst/></a:prstGeom>
+          <a:solidFill><a:srgbClr val="DA76D7"><a:alpha val="40000"/></a:srgbClr></a:solidFill>
+          <a:ln/>
+        </p:spPr>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="7" name="Center Card"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="1572000" y="800000"/>
+            <a:ext cx="6000000" cy="3500000"/>
+          </a:xfrm>
+          <a:prstGeom prst="roundRect">
+            <a:avLst><a:gd name="adj" fmla="val 6000"/></a:avLst>
+          </a:prstGeom>
+          <a:solidFill><a:srgbClr val="FFFFFF"><a:alpha val="75000"/></a:srgbClr></a:solidFill>
+          <a:ln/>
+        </p:spPr>
+      </p:sp>
+      <p:pic>
+        <p:nvPicPr>
+          <p:cNvPr id="8" name="Cotomo Logo"/>
+          <p:cNvPicPr><a:picLocks noChangeAspect="1"/></p:cNvPicPr>
+          <p:nvPr/>
+        </p:nvPicPr>
+        <p:blipFill>
+          <a:blip r:embed="rId9"/>
+          <a:srcRect l="0" r="0" t="0" b="0"/>
+          <a:stretch/>
+        </p:blipFill>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="4082000" y="950000"/>
+            <a:ext cx="980000" cy="980000"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+        </p:spPr>
+      </p:pic>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="9" name="Brand Text"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="2572000" y="1980000"/>
+            <a:ext cx="4000000" cy="320000"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+          <a:noFill/>
+          <a:ln/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" lIns="0" tIns="0" rIns="0" bIns="0" rtlCol="0" anchor="ctr"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="ctr" indent="0" marL="0">
+              <a:lnSpc><a:spcPts val="2200"/></a:lnSpc>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1200" spc="400" kern="0" dirty="0">
+                <a:solidFill><a:srgbClr val="6b6b6b"><a:alpha val="99000"/></a:srgbClr></a:solidFill>
+                <a:latin typeface="Noto Sans JP" pitchFamily="34" charset="0"/>
+                <a:ea typeface="Noto Sans JP" pitchFamily="34" charset="-122"/>
+                <a:cs typeface="Noto Sans JP" pitchFamily="34" charset="-120"/>
+              </a:rPr>
+              <a:t>おしゃべりAI コトモ</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="1200" dirty="0"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="10" name="Line Left"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="2800000" y="2120000"/>
+            <a:ext cx="1200000" cy="0"/>
+          </a:xfrm>
+          <a:prstGeom prst="line"><a:avLst/></a:prstGeom>
+          <a:noFill/>
+          <a:ln w="6350"><a:solidFill><a:srgbClr val="BBBBBB"/></a:solidFill></a:ln>
+        </p:spPr>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="11" name="Line Right"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="5144000" y="2120000"/>
+            <a:ext cx="1200000" cy="0"/>
+          </a:xfrm>
+          <a:prstGeom prst="line"><a:avLst/></a:prstGeom>
+          <a:noFill/>
+          <a:ln w="6350"><a:solidFill><a:srgbClr val="BBBBBB"/></a:solidFill></a:ln>
+        </p:spPr>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="12" name="Title"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="1572000" y="2300000"/>
+            <a:ext cx="6000000" cy="800000"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+          <a:noFill/>
+          <a:ln/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" lIns="0" tIns="0" rIns="0" bIns="0" rtlCol="0" anchor="ctr"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="ctr" indent="0" marL="0">
+              <a:lnSpc><a:spcPts val="4000"/></a:lnSpc>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="2800" b="1" spc="300" kern="0" dirty="0">
+                <a:solidFill><a:srgbClr val="484848"><a:alpha val="99000"/></a:srgbClr></a:solidFill>
+                <a:latin typeface="Noto Sans JP" pitchFamily="34" charset="0"/>
+                <a:ea typeface="Noto Sans JP" pitchFamily="34" charset="-122"/>
+                <a:cs typeface="Noto Sans JP" pitchFamily="34" charset="-120"/>
+              </a:rPr>
+              <a:t>Cotomo 1&#x5206;&#x30D4;&#x30C3;&#x30C1;</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="2800" dirty="0"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="13" name="Speaker"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="1572000" y="3200000"/>
+            <a:ext cx="6000000" cy="400000"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+          <a:noFill/>
+          <a:ln/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" lIns="0" tIns="0" rIns="0" bIns="0" rtlCol="0" anchor="ctr"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="ctr" indent="0" marL="0">
+              <a:lnSpc><a:spcPts val="2400"/></a:lnSpc>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1400" spc="200" kern="0" dirty="0">
+                <a:solidFill><a:srgbClr val="6b6b6b"><a:alpha val="99000"/></a:srgbClr></a:solidFill>
+                <a:latin typeface="Noto Sans JP" pitchFamily="34" charset="0"/>
+                <a:ea typeface="Noto Sans JP" pitchFamily="34" charset="-122"/>
+                <a:cs typeface="Noto Sans JP" pitchFamily="34" charset="-120"/>
+              </a:rPr>
+              <a:t>Starley&#x682A;&#x5F0F;&#x4F1A;&#x793E; &#xFF5C; VPoE &#x7BC0;&#x539F; &#x7950;&#x8CB4;</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="1400" dirty="0"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="14" name="Starley Logo"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="300000" y="4700000"/>
+            <a:ext cx="2000000" cy="300000"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+          <a:noFill/>
+          <a:ln/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" lIns="0" tIns="0" rIns="0" bIns="0" rtlCol="0" anchor="ctr"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="l" indent="0" marL="0">
+              <a:lnSpc><a:spcPts val="1600"/></a:lnSpc>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="900" spc="200" kern="0" dirty="0">
+                <a:solidFill><a:srgbClr val="999999"><a:alpha val="70000"/></a:srgbClr></a:solidFill>
+                <a:latin typeface="Noto Sans JP" pitchFamily="34" charset="0"/>
+                <a:ea typeface="Noto Sans JP" pitchFamily="34" charset="-122"/>
+                <a:cs typeface="Noto Sans JP" pitchFamily="34" charset="-120"/>
+              </a:rPr>
+              <a:t>Starley&#x682A;&#x5F0F;&#x4F1A;&#x793E;</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="900" dirty="0"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+    </p:spTree>
+  </p:cSld>
+  <p:clrMapOvr>
+    <a:masterClrMapping/>
+  </p:clrMapOvr>
+</p:sld>'''
+    slide_path.write_text(xml, encoding="utf-8")
+
+
 def run_clean():
     """clean.py を実行する"""
     result = subprocess.run(
@@ -261,8 +599,10 @@ def main():
     # Step 2: スライド複製
     print("\nスライド複製:")
 
-    # S4 (title-image-1) × 3
-    title_slide, title_rid, title_id = duplicate_slide("slide4.xml")
+    # S1 (product-hero) × 1 → タイトルスライド
+    title_slide, title_rid, title_id = duplicate_slide("slide1.xml")
+
+    # S4 (title-image-1) × 2
     pitch_title_slide, pitch_title_rid, pitch_title_id = duplicate_slide("slide4.xml")
     kikitakoto_slide, kikitakoto_rid, kikitakoto_id = duplicate_slide("slide4.xml")
 
@@ -311,14 +651,9 @@ def main():
     # Step 4: 各スライドのコンテンツ編集
     print("\nコンテンツ編集:")
 
-    # --- Slide 1: タイトル (S4 ベース) ---
+    # --- Slide 1: タイトル (S1 ベースのカスタムレイアウト) ---
     print("  Slide 1: タイトル")
-    replace_text_in_slide(title_slide, [
-        ("スライドタイトル", "Cotomo 1分ピッチ"),
-        ("サブテキストサブテキストサブテキストサブテキスト",
-         "Starley株式会社 ｜ VPoE 篠原 祐貴"),
-    ])
-    remove_image_placeholder(title_slide)
+    build_title_slide(title_slide)
 
     # --- Slide 2: 自己紹介 (S7 ベース) ---
     print("  Slide 2: 自己紹介")
