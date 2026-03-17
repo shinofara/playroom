@@ -1,0 +1,24 @@
+{
+  "type": "matched",
+  "label": "マッチング",
+  "fetched_at": "2026-03-17T21:30:00+09:00",
+  "count": 2,
+  "items": [
+    {
+      "name": "さくら",
+      "age": 36,
+      "location": "東京都",
+      "occupation": "会社員",
+      "comment": "楽しくお話ししたいです🌸",
+      "liked_at": "2026-03-17 19:04"
+    },
+    {
+      "name": "ai",
+      "age": 49,
+      "location": "神奈川県",
+      "occupation": "会社経営者・会社役員、その他",
+      "comment": "プロフィール最後までお目通しください",
+      "liked_at": "2026-03-17 15:58"
+    }
+  ]
+}

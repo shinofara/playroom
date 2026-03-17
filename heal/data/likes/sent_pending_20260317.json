@@ -1,0 +1,40 @@
+{
+  "type": "sent_pending",
+  "label": "送ったいいね（返事待ち）",
+  "fetched_at": "2026-03-17T21:30:00+09:00",
+  "count": 4,
+  "items": [
+    {
+      "name": "とも",
+      "age": 35,
+      "location": "東京都",
+      "occupation": "会社員、IT・Web関連",
+      "comment": "1人の方と素敵な関係づくりを希望です☺️🩷",
+      "liked_at": "2026-03-17 21:23"
+    },
+    {
+      "name": "ささ",
+      "age": 34,
+      "location": "神奈川県",
+      "occupation": "会社員",
+      "comment": "素敵な人に出会いたいです",
+      "liked_at": "2026-03-17 19:06"
+    },
+    {
+      "name": "ゆう",
+      "age": 31,
+      "location": "神奈川県",
+      "occupation": "パート・アルバイト、主婦",
+      "comment": "恋人気分で楽しむデートがしたいです🍷🍶🌃🚗",
+      "liked_at": "2026-03-17 17:52"
+    },
+    {
+      "name": "E",
+      "age": 35,
+      "location": "東京都",
+      "occupation": "会社員",
+      "comment": "日本育ちのハーフです🌿",
+      "liked_at": "2026-03-17 17:51"
+    }
+  ]
+}
