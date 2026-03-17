@@ -7,11 +7,27 @@ import os
 import sys
 import time
 from datetime import datetime, timedelta
+from pathlib import Path
 from typing import Any, Dict, Iterable, List, Tuple
 from urllib.error import HTTPError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
+
+def _load_dotenv(env_path: Path) -> None:
+    """簡易的な.envファイル読み込み"""
+    if not env_path.exists():
+        return
+    with open(env_path) as f:
+        for line in f:
+            line = line.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            key, _, value = line.partition("=")
+            os.environ.setdefault(key.strip(), value.strip())
+
+
+_load_dotenv(Path(__file__).resolve().parent.parent / ".env")
 
 API_BASE = "https://slack.com/api"
 DEFAULT_CHANNEL_ID = "C08BB9WKXEV"
