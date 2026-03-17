@@ -1,0 +1,30 @@
+{
+  "fetched_at": "2026-03-17T22:15:00+09:00",
+  "count": 24,
+  "items": [
+    {"code": "Aa5wpht2z18mc3v", "name": "な", "age": 36, "location": "東京都", "occupation": "会社員"},
+    {"code": "F7q9nkpgj0vgm67", "name": "とも", "age": 35, "location": "東京都", "occupation": "会社員、IT・Web関連"},
+    {"code": "Gx1u4sfdcwzmj8p", "name": "さくら", "age": 36, "location": "東京都", "occupation": "会社員"},
+    {"code": "iz3v8aswp9fs8ch", "name": "M", "age": 38, "location": "東京都", "occupation": "会社員、技術・専門職"},
+    {"code": "Xphl2zxv8w38zq4", "name": "yy", "age": 30, "location": "東京都", "occupation": "会社員"},
+    {"code": "Rsydct06xj1fqkv", "name": "ゆう", "age": 31, "location": "神奈川県", "occupation": "パート・アルバイト、主婦"},
+    {"code": "Ttr6x194s1nc85e", "name": "はち", "age": 34, "location": "東京都", "occupation": "会社員、上場企業"},
+    {"code": "Bq9nkfhjedljnfj", "name": "E", "age": 35, "location": "東京都", "occupation": "会社員"},
+    {"code": "Y1u4sygctxs7fev", "name": "nana", "age": 30, "location": "神奈川県", "occupation": "会社員"},
+    {"code": "Lwphl263v08maaa", "name": "つーちゃん", "age": 27, "location": "東京都", "occupation": "医療・福祉・介護"},
+    {"code": "Pydctrmx1z1udtj", "name": "むむ", "age": 30, "location": "東京都", "occupation": "会社員"},
+    {"code": "M6x1u4kydt903v9", "name": "きり", "age": 32, "location": "神奈川県", "occupation": "会社員、技術・専門職"},
+    {"code": "O2z3v845wlak74y", "name": "シャインマスカット", "age": 28, "location": "東京都", "occupation": "会社員"},
+    {"code": "Lwphl263vanp8zv", "name": "のん", "age": 27, "location": "東京都", "occupation": "IT・Web関連"},
+    {"code": "Wfgje037q6k32a4", "name": "さき", "age": 35, "location": "東京都", "occupation": "会社員"},
+    {"code": "Cgje0mvq9xrenev", "name": "もんちっち", "age": 30, "location": "東京都", "occupation": "会社員"},
+    {"code": "Uhl2z318aps4d4p", "name": "Yuna", "age": 32, "location": "東京都", "occupation": "主婦、教育関連"},
+    {"code": "Y1u4sygctxq0c69", "name": "mayu", "age": 31, "location": "東京都", "occupation": "会社員"},
+    {"code": "iz3v8aswpnnyqnd", "name": "R.", "age": 32, "location": "東京都", "occupation": "会社員、その他"},
+    {"code": "Uhl2z318a75cmyy", "name": "はるか", "age": 36, "location": "東京都", "occupation": "会社員、上場企業"},
+    {"code": "Dv8a5wdhl3m44np", "name": "あゆ", "age": 30, "location": "東京都", "occupation": "会社員"},
+    {"code": "Rsydct06x2y3asn", "name": "りお", "age": 37, "location": "東京都", "occupation": "会社員、外資・商社"},
+    {"code": "Zctr6xqu4v0q9z3", "name": "ゆう(38)", "age": 38, "location": "東京都", "occupation": "会社員"},
+    {"code": "Cgje0mvq9x2z3pk", "name": "さくら(27)", "age": 27, "location": "神奈川県", "occupation": "会社員"}
+  ]
+}

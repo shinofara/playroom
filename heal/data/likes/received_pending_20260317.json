@@ -1,0 +1,125 @@
+{
+  "type": "received_pending",
+  "label": "もらったいいね（未判断）",
+  "fetched_at": "2026-03-17T21:30:00+09:00",
+  "count": 13,
+  "items": [
+    {
+      "name": "桜子",
+      "age": 39,
+      "location": "静岡県",
+      "occupation": "会社員",
+      "comment": "婚外希望、たくさんお話したいです！",
+      "liked_at": "2026-03-17 21:01",
+      "has_message": false
+    },
+    {
+      "name": "りん",
+      "age": 40,
+      "location": "神奈川県",
+      "occupation": "医療・福祉・介護",
+      "comment": "はじめまして！",
+      "liked_at": "2026-03-17 20:51",
+      "has_message": false
+    },
+    {
+      "name": "Lira",
+      "age": 51,
+      "location": "東京都",
+      "occupation": "",
+      "comment": "🫧初めまして☺︎",
+      "liked_at": "2026-03-17 19:33",
+      "has_message": false
+    },
+    {
+      "name": "いおり",
+      "age": 48,
+      "location": "東京都",
+      "occupation": "会社員",
+      "comment": "飲みに一緒に行ってくれる方、探しています",
+      "liked_at": "2026-03-17 19:12",
+      "has_message": true
+    },
+    {
+      "name": "You",
+      "age": 45,
+      "location": "東京都",
+      "occupation": "会社員",
+      "comment": "人恋しい季節になりました",
+      "liked_at": "2026-03-17 19:05",
+      "has_message": false
+    },
+    {
+      "name": "ミント",
+      "age": 50,
+      "location": "東京都",
+      "occupation": "パート・アルバイト",
+      "comment": "歳下のかたとの出会いを求めています",
+      "liked_at": "2026-03-17 18:08",
+      "has_message": false
+    },
+    {
+      "name": "りん",
+      "age": 51,
+      "location": "神奈川県",
+      "occupation": "医療・福祉・介護",
+      "comment": "年齢高めでマッチしません😭",
+      "liked_at": "2026-03-17 18:02",
+      "has_message": false
+    },
+    {
+      "name": "ようこ",
+      "age": 44,
+      "location": "神奈川県",
+      "occupation": "主婦",
+      "comment": "平日昼間に会える方🥰",
+      "liked_at": "2026-03-17 17:56",
+      "has_message": false
+    },
+    {
+      "name": "ゆき",
+      "age": 52,
+      "location": "神奈川県",
+      "occupation": "主婦",
+      "comment": "お互い大切にしあえる人と出会いたいです",
+      "liked_at": "2026-03-17 17:53",
+      "has_message": true
+    },
+    {
+      "name": "みう",
+      "age": 49,
+      "location": "東京都",
+      "occupation": "会社員",
+      "comment": "素敵な人と出会いたくて登録しました☆",
+      "liked_at": "2026-03-17 17:52",
+      "has_message": false
+    },
+    {
+      "name": "O",
+      "age": 42,
+      "location": "東京都",
+      "occupation": "主婦",
+      "comment": "信頼関係を育める方！",
+      "liked_at": "2026-03-17 16:44",
+      "has_message": true
+    },
+    {
+      "name": "えみ",
+      "age": 38,
+      "location": "東京都",
+      "occupation": "医療・福祉・介護",
+      "comment": "はじめまして",
+      "liked_at": "2026-03-17 15:55",
+      "has_message": false
+    },
+    {
+      "name": "もも🍑",
+      "age": 46,
+      "location": "埼玉県",
+      "occupation": "主婦、その他",
+      "comment": "誠実なお付き合いができる人と出会いたいです",
+      "liked_at": "2026-03-17 15:50",
+      "has_message": false
+    }
+  ]
+}
