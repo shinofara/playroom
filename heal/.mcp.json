@@ -1,9 +1,9 @@
 {
   "mcpServers": {
-    "playwright": {
+    "chrome-devtools": {
       "command": "npx",
       "args": [
-        "@playwright/mcp@latest"
+        "chrome-devtools-mcp@latest"
       ]
     }
   }
